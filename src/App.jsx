@@ -34,7 +34,7 @@ export default function App() {
   const [adults, setAdults] = useState(1);
   const [cabin, setCabin] = useState("economy");
   const [sortBy, setSortBy] = useState("best"); // best | price_low | duration_short
-  const [currency, setCurrency] = useState("");
+  const [currency, setCurrency] = useState("USD");
 
   const [filters, setFilters] = useState({
     stops: "any", // any | direct | onestop
@@ -245,10 +245,10 @@ export default function App() {
 
           <div className="mt-4 flex flex-wrap gap-2">
             <button
-              disabled={!canSearch}
+              // disabled={!canSearch}
               onClick={onSearch}
               className={classNames(
-                "rounded-xl px-4 py-2  ",
+                "rounded-xl px-4 py-2",
                 canSearch ? "bg-black hover:bg-gray-800" : "bg-gray-300 cursor-not-allowed"
               )}
             >
@@ -363,7 +363,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => { localStorage.setItem("rapidapi_key", apiKey); setSettingsOpen(false); }}
-              className="rounded-xl bg-black px-4 py-2   hover:bg-gray-800"
+              className="rounded-xl bg-black px-4 py-2 hover:bg-gray-800"
             >
               Save
             </button>
